@@ -1,9 +1,16 @@
 import { Link } from "react-router-dom";
-import { Search } from "lucide-react";
-import { useState } from "react";
+import { Search, Moon, Sun } from "lucide-react";
+import { useState, useEffect } from "react";
+import { useTheme } from "next-themes";
 
 export default function Header() {
   const [searchFocused, setSearchFocused] = useState(false);
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur">
