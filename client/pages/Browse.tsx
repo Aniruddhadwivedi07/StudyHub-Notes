@@ -10,7 +10,7 @@ const subjects = [
     notesCount: 24,
     color: "from-blue-400 to-blue-600",
     description: "Fundamentals to advanced Python programming",
-    contributors: 142
+    contributors: 142,
   },
   {
     id: "dsa",
@@ -19,7 +19,7 @@ const subjects = [
     notesCount: 18,
     color: "from-purple-400 to-purple-600",
     description: "Master DSA for interview preparation",
-    contributors: 87
+    contributors: 87,
   },
   {
     id: "javascript",
@@ -28,7 +28,7 @@ const subjects = [
     notesCount: 22,
     color: "from-yellow-400 to-yellow-600",
     description: "From ES6 to modern frameworks",
-    contributors: 156
+    contributors: 156,
   },
   {
     id: "webdev",
@@ -37,7 +37,7 @@ const subjects = [
     notesCount: 31,
     color: "from-green-400 to-green-600",
     description: "Frontend and backend web technologies",
-    contributors: 203
+    contributors: 203,
   },
   {
     id: "database",
@@ -46,7 +46,7 @@ const subjects = [
     notesCount: 15,
     color: "from-red-400 to-red-600",
     description: "SQL, NoSQL, and database design",
-    contributors: 95
+    contributors: 95,
   },
   {
     id: "devops",
@@ -55,7 +55,7 @@ const subjects = [
     notesCount: 12,
     color: "from-cyan-400 to-cyan-600",
     description: "Docker, Kubernetes, and cloud platforms",
-    contributors: 67
+    contributors: 67,
   },
   {
     id: "cs",
@@ -64,7 +64,7 @@ const subjects = [
     notesCount: 28,
     color: "from-pink-400 to-pink-600",
     description: "Core CS concepts and theory",
-    contributors: 112
+    contributors: 112,
   },
   {
     id: "ml",
@@ -73,8 +73,8 @@ const subjects = [
     notesCount: 19,
     color: "from-orange-400 to-orange-600",
     description: "ML algorithms and deep learning",
-    contributors: 78
-  }
+    contributors: 78,
+  },
 ];
 
 export default function Browse() {
@@ -88,7 +88,8 @@ export default function Browse() {
               Browse All Subjects
             </h1>
             <p className="text-lg text-muted-foreground">
-              Explore our comprehensive collection of study materials organized by discipline.
+              Explore our comprehensive collection of study materials organized
+              by discipline.
             </p>
           </div>
         </div>
@@ -98,14 +99,16 @@ export default function Browse() {
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {subjects.map(subject => (
+            {subjects.map((subject) => (
               <Link
                 key={subject.id}
                 to={`/subject/${subject.id}`}
                 className="group rounded-lg border border-border bg-card p-6 hover:border-primary hover:shadow-lg transition-all"
               >
                 <div className="space-y-4">
-                  <div className={`w-16 h-16 rounded-lg bg-gradient-to-br ${subject.color} flex items-center justify-center text-3xl shadow-md`}>
+                  <div
+                    className={`w-16 h-16 rounded-lg bg-gradient-to-br ${subject.color} flex items-center justify-center text-3xl shadow-md`}
+                  >
                     {subject.icon}
                   </div>
                   <div>

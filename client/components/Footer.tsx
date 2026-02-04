@@ -17,31 +17,46 @@ export default function Footer() {
               <span className="font-bold text-foreground">StudyHub</span>
             </div>
             <p className="text-sm text-muted-foreground">
-              A collaborative platform for students to organize and share study resources.
+              A collaborative platform for students to organize and share study
+              resources.
             </p>
           </div>
 
           {/* Navigation */}
           <div className="space-y-3">
-            <h4 className="font-semibold text-foreground text-sm">Navigation</h4>
+            <h4 className="font-semibold text-foreground text-sm">
+              Navigation
+            </h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to="/" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link
+                  to="/"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/browse" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link
+                  to="/browse"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
                   Browse Subjects
                 </Link>
               </li>
               <li>
-                <Link to="/my-notes" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link
+                  to="/my-notes"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
                   My Notes
                 </Link>
               </li>
               <li>
-                <Link to="/resources" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link
+                  to="/resources"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
                   Resources
                 </Link>
               </li>
@@ -53,22 +68,34 @@ export default function Footer() {
             <h4 className="font-semibold text-foreground text-sm">Resources</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                <a
+                  href="#"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
                   Documentation
                 </a>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                <a
+                  href="#"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
                   API Reference
                 </a>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                <a
+                  href="#"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
                   FAQ
                 </a>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                <a
+                  href="#"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
                   Contact Us
                 </a>
               </li>
@@ -79,13 +106,22 @@ export default function Footer() {
           <div className="space-y-3">
             <h4 className="font-semibold text-foreground text-sm">Follow Us</h4>
             <div className="flex gap-3">
-              <a href="#" className="w-10 h-10 rounded-lg border border-border flex items-center justify-center hover:border-primary hover:text-primary transition-colors">
+              <a
+                href="#"
+                className="w-10 h-10 rounded-lg border border-border flex items-center justify-center hover:border-primary hover:text-primary transition-colors"
+              >
                 <Github className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-lg border border-border flex items-center justify-center hover:border-primary hover:text-primary transition-colors">
+              <a
+                href="#"
+                className="w-10 h-10 rounded-lg border border-border flex items-center justify-center hover:border-primary hover:text-primary transition-colors"
+              >
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-lg border border-border flex items-center justify-center hover:border-primary hover:text-primary transition-colors">
+              <a
+                href="#"
+                className="w-10 h-10 rounded-lg border border-border flex items-center justify-center hover:border-primary hover:text-primary transition-colors"
+              >
                 <Mail className="w-5 h-5" />
               </a>
             </div>

@@ -22,8 +22,12 @@ export default function Header() {
               <span className="text-white font-bold text-lg">📚</span>
             </div>
             <div className="hidden sm:flex flex-col">
-              <span className="text-lg font-bold text-foreground">StudyHub</span>
-              <span className="text-xs text-muted-foreground">Learn Together</span>
+              <span className="text-lg font-bold text-foreground">
+                StudyHub
+              </span>
+              <span className="text-xs text-muted-foreground">
+                Learn Together
+              </span>
             </div>
           </Link>
 
@@ -31,7 +35,9 @@ export default function Header() {
           <div className="hidden md:flex flex-1 max-w-sm">
             <div
               className={`w-full flex items-center gap-2 rounded-lg border px-4 py-2 transition-colors ${
-                searchFocused ? "border-primary bg-primary/5" : "border-border bg-secondary/30"
+                searchFocused
+                  ? "border-primary bg-primary/5"
+                  : "border-border bg-secondary/30"
               }`}
             >
               <Search className="w-4 h-4 text-muted-foreground" />

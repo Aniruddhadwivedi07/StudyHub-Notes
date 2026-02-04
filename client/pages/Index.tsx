@@ -10,7 +10,7 @@ const subjects = [
     icon: "🐍",
     notesCount: 24,
     color: "from-blue-400 to-blue-600",
-    description: "Fundamentals to advanced Python programming"
+    description: "Fundamentals to advanced Python programming",
   },
   {
     id: "dsa",
@@ -18,7 +18,7 @@ const subjects = [
     icon: "📊",
     notesCount: 18,
     color: "from-purple-400 to-purple-600",
-    description: "Master DSA for interview preparation"
+    description: "Master DSA for interview preparation",
   },
   {
     id: "javascript",
@@ -26,7 +26,7 @@ const subjects = [
     icon: "⚡",
     notesCount: 22,
     color: "from-yellow-400 to-yellow-600",
-    description: "From ES6 to modern frameworks"
+    description: "From ES6 to modern frameworks",
   },
   {
     id: "webdev",
@@ -34,7 +34,7 @@ const subjects = [
     icon: "🌐",
     notesCount: 31,
     color: "from-green-400 to-green-600",
-    description: "Frontend and backend web technologies"
+    description: "Frontend and backend web technologies",
   },
   {
     id: "database",
@@ -42,7 +42,7 @@ const subjects = [
     icon: "🗄️",
     notesCount: 15,
     color: "from-red-400 to-red-600",
-    description: "SQL, NoSQL, and database design"
+    description: "SQL, NoSQL, and database design",
   },
   {
     id: "devops",
@@ -50,8 +50,8 @@ const subjects = [
     icon: "☁️",
     notesCount: 12,
     color: "from-cyan-400 to-cyan-600",
-    description: "Docker, Kubernetes, and cloud platforms"
-  }
+    description: "Docker, Kubernetes, and cloud platforms",
+  },
 ];
 
 // Mock data for latest notes
@@ -64,7 +64,7 @@ const latestNotes = [
     date: "2 days ago",
     tags: ["basics", "syntax", "tips"],
     views: 342,
-    favorites: 45
+    favorites: 45,
   },
   {
     id: 2,
@@ -74,7 +74,7 @@ const latestNotes = [
     date: "4 days ago",
     tags: ["trees", "algorithms", "interview"],
     views: 521,
-    favorites: 89
+    favorites: 89,
   },
   {
     id: 3,
@@ -84,7 +84,7 @@ const latestNotes = [
     date: "1 week ago",
     tags: ["react", "hooks", "state-management"],
     views: 812,
-    favorites: 156
+    favorites: 156,
   },
   {
     id: 4,
@@ -94,14 +94,14 @@ const latestNotes = [
     date: "1 week ago",
     tags: ["css", "layout", "responsive"],
     views: 634,
-    favorites: 98
-  }
+    favorites: 98,
+  },
 ];
 
 const stats = [
   { label: "Active Students", value: "12,345", icon: Users },
   { label: "Study Notes", value: "2,847", icon: BookOpen },
-  { label: "Resources Downloaded", value: "45K+", icon: Download }
+  { label: "Resources Downloaded", value: "45K+", icon: Download },
 ];
 
 export default function Index() {
@@ -119,7 +119,8 @@ export default function Index() {
                 </span>
               </h1>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Join thousands of students sharing and organizing study materials, notes, and resources across all academic disciplines.
+                Join thousands of students sharing and organizing study
+                materials, notes, and resources across all academic disciplines.
               </p>
             </div>
 
@@ -140,7 +141,10 @@ export default function Index() {
 
             {/* Quick Actions */}
             <div className="flex flex-wrap justify-center gap-3 text-sm">
-              <Link to="/browse" className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-border hover:border-primary text-muted-foreground hover:text-primary transition-colors">
+              <Link
+                to="/browse"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-border hover:border-primary text-muted-foreground hover:text-primary transition-colors"
+              >
                 Browse Subjects <ArrowRight className="w-4 h-4" />
               </Link>
               <button className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-secondary text-secondary-foreground hover:bg-secondary/80 transition-colors">
@@ -165,7 +169,9 @@ export default function Index() {
                     </div>
                   </div>
                   <div>
-                    <p className="text-3xl md:text-4xl font-bold text-foreground">{stat.value}</p>
+                    <p className="text-3xl md:text-4xl font-bold text-foreground">
+                      {stat.value}
+                    </p>
                     <p className="text-muted-foreground">{stat.label}</p>
                   </div>
                 </div>
@@ -180,9 +186,12 @@ export default function Index() {
         <div className="container mx-auto px-4">
           <div className="space-y-12">
             <div className="text-center space-y-3">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground">Featured Subjects</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+                Featured Subjects
+              </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Explore our comprehensive collection of study materials organized by academic discipline.
+                Explore our comprehensive collection of study materials
+                organized by academic discipline.
               </p>
             </div>
 
@@ -194,7 +203,9 @@ export default function Index() {
                   className="group rounded-lg border border-border bg-card p-6 hover:border-primary hover:shadow-lg transition-all"
                 >
                   <div className="space-y-4">
-                    <div className={`w-14 h-14 rounded-lg bg-gradient-to-br ${subject.color} flex items-center justify-center text-2xl shadow-md`}>
+                    <div
+                      className={`w-14 h-14 rounded-lg bg-gradient-to-br ${subject.color} flex items-center justify-center text-2xl shadow-md`}
+                    >
                       {subject.icon}
                     </div>
                     <div>
@@ -233,9 +244,12 @@ export default function Index() {
         <div className="container mx-auto px-4">
           <div className="space-y-12">
             <div className="text-center space-y-3">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground">Latest Notes from Community</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+                Latest Notes from Community
+              </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Discover recently shared notes and study materials from students like you.
+                Discover recently shared notes and study materials from students
+                like you.
               </p>
             </div>
 
@@ -251,7 +265,9 @@ export default function Index() {
                         <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary">
                           {note.subject}
                         </span>
-                        <span className="text-xs text-muted-foreground">{note.date}</span>
+                        <span className="text-xs text-muted-foreground">
+                          {note.date}
+                        </span>
                       </div>
                       <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
                         {note.title}
@@ -302,7 +318,8 @@ export default function Index() {
                 Join Our Learning Community Today
               </h2>
               <p className="text-lg text-muted-foreground">
-                Start sharing your notes, accessing resources, and collaborating with thousands of students worldwide.
+                Start sharing your notes, accessing resources, and collaborating
+                with thousands of students worldwide.
               </p>
               <button className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 font-medium transition-colors shadow-md">
                 Create Free Account <ArrowRight className="w-4 h-4" />

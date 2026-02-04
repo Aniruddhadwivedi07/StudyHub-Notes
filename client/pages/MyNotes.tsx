@@ -30,9 +30,12 @@ export default function MyNotes() {
                 </div>
               </div>
               <div className="space-y-2">
-                <h2 className="text-2xl font-bold text-foreground">No notes yet</h2>
+                <h2 className="text-2xl font-bold text-foreground">
+                  No notes yet
+                </h2>
                 <p className="text-muted-foreground max-w-md mx-auto">
-                  Start creating your first study note and organize your learning materials.
+                  Start creating your first study note and organize your
+                  learning materials.
                 </p>
               </div>
               <button className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 font-medium transition-colors shadow-sm">
@@ -47,19 +50,24 @@ export default function MyNotes() {
                 <div className="text-3xl">📝</div>
                 <h3 className="font-semibold text-foreground">Quick Notes</h3>
                 <p className="text-sm text-muted-foreground">
-                  Create notes with rich text formatting and syntax highlighting.
+                  Create notes with rich text formatting and syntax
+                  highlighting.
                 </p>
               </div>
               <div className="rounded-lg border border-border bg-card p-6 text-center space-y-3">
                 <div className="text-3xl">🏷️</div>
-                <h3 className="font-semibold text-foreground">Organize with Tags</h3>
+                <h3 className="font-semibold text-foreground">
+                  Organize with Tags
+                </h3>
                 <p className="text-sm text-muted-foreground">
                   Use tags to categorize and quickly find your notes.
                 </p>
               </div>
               <div className="rounded-lg border border-border bg-card p-6 text-center space-y-3">
                 <div className="text-3xl">🔄</div>
-                <h3 className="font-semibold text-foreground">Version Control</h3>
+                <h3 className="font-semibold text-foreground">
+                  Version Control
+                </h3>
                 <p className="text-sm text-muted-foreground">
                   Track changes and revert to previous versions of your notes.
                 </p>

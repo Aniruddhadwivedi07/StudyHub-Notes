@@ -6,38 +6,38 @@ const resources = [
     title: "Python Documentation",
     description: "Official Python documentation with guides and references.",
     icon: "📚",
-    category: "Documentation"
+    category: "Documentation",
   },
   {
     title: "LeetCode",
     description: "Practice coding problems and prepare for interviews.",
     icon: "⚡",
-    category: "Practice"
+    category: "Practice",
   },
   {
     title: "MDN Web Docs",
     description: "Comprehensive JavaScript, HTML, and CSS reference.",
     icon: "🌐",
-    category: "Documentation"
+    category: "Documentation",
   },
   {
     title: "GeeksforGeeks",
     description: "Tutorials, algorithms, and programming concepts.",
     icon: "📖",
-    category: "Tutorial"
+    category: "Tutorial",
   },
   {
     title: "Stack Overflow",
     description: "Community-driven Q&A for developers.",
     icon: "❓",
-    category: "Community"
+    category: "Community",
   },
   {
     title: "GitHub",
     description: "Open source projects and code repositories.",
     icon: "🔗",
-    category: "Code"
-  }
+    category: "Code",
+  },
 ];
 
 export default function Resources() {
@@ -51,7 +51,8 @@ export default function Resources() {
               Learning Resources
             </h1>
             <p className="text-lg text-muted-foreground">
-              Curated collection of external resources to enhance your learning journey.
+              Curated collection of external resources to enhance your learning
+              journey.
             </p>
           </div>
         </div>
@@ -63,9 +64,12 @@ export default function Resources() {
           <div className="max-w-4xl mx-auto">
             {/* Info */}
             <div className="mb-12 p-6 rounded-lg border border-border bg-card space-y-3">
-              <h2 className="text-lg font-semibold text-foreground">Recommended Resources</h2>
+              <h2 className="text-lg font-semibold text-foreground">
+                Recommended Resources
+              </h2>
               <p className="text-muted-foreground">
-                Here are some external resources that our community recommends for learning. Click on any resource to visit.
+                Here are some external resources that our community recommends
+                for learning. Click on any resource to visit.
               </p>
             </div>
 
@@ -107,7 +111,8 @@ export default function Resources() {
                 Download Study Materials
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Access downloadable study guides, cheat sheets, and reference materials prepared by our community.
+                Access downloadable study guides, cheat sheets, and reference
+                materials prepared by our community.
               </p>
               <button className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 font-medium transition-colors shadow-sm">
                 <Download className="w-5 h-5" />

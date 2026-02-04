@@ -27,7 +27,8 @@ const NotFound = () => {
                 Page Not Found
               </h1>
               <p className="text-lg text-muted-foreground max-w-md mx-auto">
-                The page you're looking for doesn't exist or has been moved. Let's get you back on track.
+                The page you're looking for doesn't exist or has been moved.
+                Let's get you back on track.
               </p>
             </div>
 

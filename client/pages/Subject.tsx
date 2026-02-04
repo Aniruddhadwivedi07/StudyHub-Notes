@@ -1,45 +1,58 @@
 import { useParams } from "react-router-dom";
-import { Search, Filter, BookmarkIcon, Share2, Download, ThumbsUp } from "lucide-react";
+import {
+  Search,
+  Filter,
+  BookmarkIcon,
+  Share2,
+  Download,
+  ThumbsUp,
+} from "lucide-react";
 import Layout from "@/components/Layout";
 import { useState } from "react";
 
-const subjectDetails: Record<string, { name: string; icon: string; color: string; description: string }> = {
+const subjectDetails: Record<
+  string,
+  { name: string; icon: string; color: string; description: string }
+> = {
   python: {
     name: "Python",
     icon: "🐍",
     color: "from-blue-400 to-blue-600",
-    description: "Master Python programming from fundamentals to advanced concepts"
+    description:
+      "Master Python programming from fundamentals to advanced concepts",
   },
   dsa: {
     name: "Data Structures & Algorithms",
     icon: "📊",
     color: "from-purple-400 to-purple-600",
-    description: "Comprehensive guide to DSA for coding interviews and competitive programming"
+    description:
+      "Comprehensive guide to DSA for coding interviews and competitive programming",
   },
   javascript: {
     name: "JavaScript",
     icon: "⚡",
     color: "from-yellow-400 to-yellow-600",
-    description: "Learn modern JavaScript, ES6+, and web development"
+    description: "Learn modern JavaScript, ES6+, and web development",
   },
   webdev: {
     name: "Web Development",
     icon: "🌐",
     color: "from-green-400 to-green-600",
-    description: "Full-stack web development with modern tools and frameworks"
+    description: "Full-stack web development with modern tools and frameworks",
   },
   database: {
     name: "Databases",
     icon: "🗄️",
     color: "from-red-400 to-red-600",
-    description: "SQL, NoSQL databases, and data management systems"
+    description: "SQL, NoSQL databases, and data management systems",
   },
   devops: {
     name: "DevOps & Cloud",
     icon: "☁️",
     color: "from-cyan-400 to-cyan-600",
-    description: "Cloud computing, containerization, and infrastructure automation"
-  }
+    description:
+      "Cloud computing, containerization, and infrastructure automation",
+  },
 };
 
 // Mock notes data
@@ -47,88 +60,98 @@ const mockNotes = [
   {
     id: 1,
     title: "Python List Comprehensions Explained",
-    description: "Deep dive into list comprehensions, generator expressions, and their performance implications.",
+    description:
+      "Deep dive into list comprehensions, generator expressions, and their performance implications.",
     author: "Sarah Chen",
     date: "2 days ago",
     tags: ["basics", "syntax", "tips"],
     views: 342,
     favorites: 45,
-    downloads: 28
+    downloads: 28,
   },
   {
     id: 2,
     title: "Working with Decorators",
-    description: "Understanding decorators in Python, creating custom decorators, and practical use cases.",
+    description:
+      "Understanding decorators in Python, creating custom decorators, and practical use cases.",
     author: "Mike Johnson",
     date: "5 days ago",
     tags: ["advanced", "functions", "metaprogramming"],
     views: 521,
     favorites: 89,
-    downloads: 67
+    downloads: 67,
   },
   {
     id: 3,
     title: "Async Programming with asyncio",
-    description: "Master async/await patterns, event loops, and concurrent programming in Python.",
+    description:
+      "Master async/await patterns, event loops, and concurrent programming in Python.",
     author: "Emma Wilson",
     date: "1 week ago",
     tags: ["async", "concurrency", "performance"],
     views: 812,
     favorites: 156,
-    downloads: 94
+    downloads: 94,
   },
   {
     id: 4,
     title: "Database Connectivity with SQLAlchemy",
-    description: "ORM basics, relationships, migrations, and best practices for database operations.",
+    description:
+      "ORM basics, relationships, migrations, and best practices for database operations.",
     author: "Alex Rodriguez",
     date: "1 week ago",
     tags: ["databases", "orm", "advanced"],
     views: 634,
     favorites: 98,
-    downloads: 56
+    downloads: 56,
   },
   {
     id: 5,
     title: "Web Scraping Best Practices",
-    description: "Ethical scraping, handling rate limits, parsing HTML and JSON data.",
+    description:
+      "Ethical scraping, handling rate limits, parsing HTML and JSON data.",
     author: "Lisa Park",
     date: "2 weeks ago",
     tags: ["web", "scraping", "practical"],
     views: 445,
     favorites: 67,
-    downloads: 42
+    downloads: 42,
   },
   {
     id: 6,
     title: "Testing and Debugging",
-    description: "Unit testing, pytest, debugging techniques, and code quality tools.",
+    description:
+      "Unit testing, pytest, debugging techniques, and code quality tools.",
     author: "David Brown",
     date: "2 weeks ago",
     tags: ["testing", "debugging", "quality"],
     views: 378,
     favorites: 52,
-    downloads: 31
-  }
+    downloads: 31,
+  },
 ];
 
 export default function Subject() {
   const { id } = useParams<{ id: string }>();
   const subject = subjectDetails[id || "python"] || subjectDetails.python;
-  
+
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
-  const [sortBy, setSortBy] = useState<"recent" | "popular" | "trending">("recent");
+  const [sortBy, setSortBy] = useState<"recent" | "popular" | "trending">(
+    "recent",
+  );
 
   // Get all unique tags
-  const allTags = Array.from(new Set(mockNotes.flatMap(note => note.tags)));
+  const allTags = Array.from(new Set(mockNotes.flatMap((note) => note.tags)));
 
   // Filter notes based on search and tags
-  const filteredNotes = mockNotes.filter(note => {
-    const matchesSearch = note.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         note.description.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesTags = selectedTags.length === 0 || 
-                       selectedTags.some(tag => note.tags.includes(tag));
+  const filteredNotes = mockNotes.filter((note) => {
+    const matchesSearch =
+      note.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      note.description.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesTags =
+      selectedTags.length === 0 ||
+      selectedTags.some((tag) => note.tags.includes(tag));
     return matchesSearch && matchesTags;
   });
 
@@ -140,8 +163,8 @@ export default function Subject() {
   });
 
   const toggleTag = (tag: string) => {
-    setSelectedTags(prev =>
-      prev.includes(tag) ? prev.filter(t => t !== tag) : [...prev, tag]
+    setSelectedTags((prev) =>
+      prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag],
     );
   };
 
@@ -151,12 +174,18 @@ export default function Subject() {
       <section className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-background to-accent/5 py-12 md:py-16">
         <div className="container mx-auto px-4">
           <div className="flex items-start gap-6">
-            <div className={`w-16 h-16 rounded-lg bg-gradient-to-br ${subject.color} flex items-center justify-center text-4xl shadow-lg`}>
+            <div
+              className={`w-16 h-16 rounded-lg bg-gradient-to-br ${subject.color} flex items-center justify-center text-4xl shadow-lg`}
+            >
               {subject.icon}
             </div>
             <div className="flex-1">
-              <h1 className="text-3xl md:text-4xl font-bold text-foreground">{subject.name}</h1>
-              <p className="text-lg text-muted-foreground mt-2">{subject.description}</p>
+              <h1 className="text-3xl md:text-4xl font-bold text-foreground">
+                {subject.name}
+              </h1>
+              <p className="text-lg text-muted-foreground mt-2">
+                {subject.description}
+              </p>
             </div>
           </div>
         </div>
@@ -171,7 +200,9 @@ export default function Subject() {
               <div className="space-y-6 sticky top-24">
                 {/* Search */}
                 <div className="space-y-2">
-                  <label className="text-sm font-semibold text-foreground">Search</label>
+                  <label className="text-sm font-semibold text-foreground">
+                    Search
+                  </label>
                   <div className="relative">
                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground pointer-events-none" />
                     <input
@@ -186,7 +217,9 @@ export default function Subject() {
 
                 {/* Sort */}
                 <div className="space-y-2">
-                  <label className="text-sm font-semibold text-foreground">Sort By</label>
+                  <label className="text-sm font-semibold text-foreground">
+                    Sort By
+                  </label>
                   <select
                     value={sortBy}
                     onChange={(e) => setSortBy(e.target.value as any)}
@@ -201,7 +234,9 @@ export default function Subject() {
                 {/* Tags Filter */}
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <label className="text-sm font-semibold text-foreground">Tags</label>
+                    <label className="text-sm font-semibold text-foreground">
+                      Tags
+                    </label>
                     {selectedTags.length > 0 && (
                       <button
                         onClick={() => setSelectedTags([])}
@@ -212,7 +247,7 @@ export default function Subject() {
                     )}
                   </div>
                   <div className="flex flex-wrap gap-2">
-                    {allTags.map(tag => (
+                    {allTags.map((tag) => (
                       <button
                         key={tag}
                         onClick={() => toggleTag(tag)}
@@ -231,7 +266,10 @@ export default function Subject() {
                 {/* Stats */}
                 <div className="pt-4 border-t border-border space-y-2">
                   <p className="text-sm text-muted-foreground">
-                    <strong className="text-foreground">{sortedNotes.length}</strong> notes found
+                    <strong className="text-foreground">
+                      {sortedNotes.length}
+                    </strong>{" "}
+                    notes found
                   </p>
                 </div>
               </div>
@@ -241,7 +279,9 @@ export default function Subject() {
             <div className="lg:col-span-3">
               {sortedNotes.length === 0 ? (
                 <div className="text-center py-12">
-                  <p className="text-muted-foreground text-lg">No notes found matching your criteria.</p>
+                  <p className="text-muted-foreground text-lg">
+                    No notes found matching your criteria.
+                  </p>
                   <button
                     onClick={() => {
                       setSearchQuery("");
@@ -254,7 +294,7 @@ export default function Subject() {
                 </div>
               ) : (
                 <div className="space-y-4">
-                  {sortedNotes.map(note => (
+                  {sortedNotes.map((note) => (
                     <div
                       key={note.id}
                       className="rounded-lg border border-border bg-card p-6 hover:border-primary hover:shadow-lg transition-all group cursor-pointer"
@@ -266,7 +306,9 @@ export default function Subject() {
                             <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
                               {note.title}
                             </h3>
-                            <p className="text-sm text-muted-foreground">{note.description}</p>
+                            <p className="text-sm text-muted-foreground">
+                              {note.description}
+                            </p>
                           </div>
                           <button className="p-2 rounded-lg border border-border hover:border-primary hover:text-primary transition-colors">
                             <BookmarkIcon className="w-5 h-5" />
@@ -275,7 +317,7 @@ export default function Subject() {
 
                         {/* Tags */}
                         <div className="flex flex-wrap gap-2 pt-2">
-                          {note.tags.map(tag => (
+                          {note.tags.map((tag) => (
                             <span
                               key={tag}
                               className={`inline-block px-2 py-1 rounded text-xs font-medium ${
@@ -292,7 +334,12 @@ export default function Subject() {
                         {/* Footer */}
                         <div className="pt-4 border-t border-border flex items-center justify-between text-sm text-muted-foreground">
                           <div className="space-y-1">
-                            <p>By <strong className="text-foreground">{note.author}</strong></p>
+                            <p>
+                              By{" "}
+                              <strong className="text-foreground">
+                                {note.author}
+                              </strong>
+                            </p>
                             <p>{note.date}</p>
                           </div>
                           <div className="flex gap-4 md:gap-6">
