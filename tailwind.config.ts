@@ -12,6 +12,10 @@ export default {
         "2xl": "1400px",
       },
     },
+    fontFamily: {
+      sans: ["Geist", "system-ui", "sans-serif"],
+      mono: ["Geist Mono", "monospace"],
+    },
     extend: {
       colors: {
         border: "hsl(var(--border))",
@@ -80,12 +84,26 @@ export default {
             height: "0",
           },
         },
+        "fade-in": {
+          from: { opacity: "0" },
+          to: { opacity: "1" },
+        },
+        "slide-up": {
+          from: { transform: "translateY(20px)", opacity: "0" },
+          to: { transform: "translateY(0)", opacity: "1" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "fade-in": "fade-in 0.3s ease-out",
+        "slide-up": "slide-up 0.3s ease-out",
+      },
+      spacing: {
+        "safe-top": "env(safe-area-inset-top)",
+        "safe-bottom": "env(safe-area-inset-bottom)",
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 } satisfies Config;
