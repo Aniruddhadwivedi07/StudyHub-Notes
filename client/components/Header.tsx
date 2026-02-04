@@ -47,6 +47,19 @@ export default function Header() {
 
           {/* Auth Actions */}
           <div className="flex items-center gap-3">
+            {mounted && (
+              <button
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                className="p-2 rounded-lg border border-border hover:border-primary hover:bg-primary/10 transition-colors"
+                aria-label="Toggle theme"
+              >
+                {theme === "dark" ? (
+                  <Sun className="w-5 h-5 text-foreground" />
+                ) : (
+                  <Moon className="w-5 h-5 text-foreground" />
+                )}
+              </button>
+            )}
             <button className="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-lg text-sm font-medium text-primary hover:bg-primary/10 transition-colors">
               Sign In
             </button>
